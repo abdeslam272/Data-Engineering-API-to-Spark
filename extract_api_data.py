@@ -24,9 +24,17 @@ def get_random_user_data():
         print("Failed to retrieve data from the API")
         return None
 
-# Call the function to get the DataFrame
-random_user_data = get_random_user_data()
 
-# Print the DataFrame (if available)
-if random_user_data is not None:
-    print(random_user_data)
+# Initialize an empty DataFrame to store all the results
+all_results = pd.DataFrame()
+
+
+# Call the function to get the DataFrame
+i = 0
+while i<100 :
+  random_user_data = get_random_user_data()
+  all_results = pd.concat([all_results, random_user_data], ignore_index=True)  # Concatenate current data to all_results
+  i += 1
+
+# Print the combined DataFrame
+print(all_results)
