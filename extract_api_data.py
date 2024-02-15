@@ -1,7 +1,12 @@
 import requests
 import pandas as pd
 
-def get_random_user_data():
+
+class GenerateRandomUserData:
+  def __init__(self) -> None:
+     pass
+
+  def get_random_user_data():
     url = 'https://randomuser.me/api/'
 
     # Send a GET request to the API endpoint
